@@ -24,3 +24,6 @@ E:\Projects\ForAizhulov\ForAizhulov\obj\Debug\net6.0\refint\ForAizhulov.dll
 E:\Projects\ForAizhulov\ForAizhulov\obj\Debug\net6.0\ForAizhulov.pdb
 E:\Projects\ForAizhulov\ForAizhulov\obj\Debug\net6.0\ForAizhulov.genruntimeconfig.cache
 E:\Projects\ForAizhulov\ForAizhulov\obj\Debug\net6.0\ref\ForAizhulov.dll
+E:\Projects\ForAizhulov\ForAizhulov\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\Projects\ForAizhulov\ForAizhulov\obj\Debug\net6.0\ForAizhulov.csproj.CopyComplete
+E:\Projects\ForAizhulov\ForAizhulov\bin\Debug\net6.0\Logs\KOLYAN.json

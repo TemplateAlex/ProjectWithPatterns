@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OAt4xvybSo8PdLdfD9Oyec2okIK+dzektZpKjjUvpBJM3fYDWtmxOFQu5WDxxImlQRXPyWphNEFLK5ohn44h/g==",
+  "dgSpecHash": "jJmZ1GJQ/CUkenSZRQH/lok55pQUSOzPC06oFHI7jAU3tGWK5oRWXEdtLKNd3WiUBj0r6xLjXZoaR8P1OM1qFQ==",
   "success": true,
   "projectFilePath": "E:\\Projects\\ForAizhulov\\ForAizhulov\\ForAizhulov.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alexe\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

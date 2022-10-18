@@ -18,15 +18,7 @@
         }
         public bool isDone()
         {
-            try
-            {
-                this._components.GetNextElement();
-                return false;
-            } 
-            catch(NotImplementedException ex)
-            {
-                 return true;
-            }
+            return this._components.IsDone();
         }   
 
         public IComponent CurrentItem()

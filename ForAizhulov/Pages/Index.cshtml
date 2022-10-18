@@ -1,12 +1,44 @@
 ﻿@page
 @model IndexModel
 @using Patterns;
+@using ForAizhulov.HtmlHelpers;
 @{
     ViewData["Title"] = "Home page";
-}
+    List<string> ciphersStringKey = new List<string>()
+    {
+        "Visiner",
+        "Atbash",
+        "ADFGX"
+    };
+    List<string> ciphersIntKey = new List<string>()
+    {
+        "XOR"
+    };
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    Factorys firstFactory = new Factorys(new FirstConcreteFactory());
+    Factorys secondFactory = new Factorys(new SecondConcreteFactory());
+}
+<form method="post">
+    <div class="container">
+        <label for="wordId" class="form-label">Write your word:</label>
+        <input type="text" class="form-control" id="wordId" name="word" />
+    </div>
+    <div class="container">
+        <label for="keyId" class="form-label">Write your key:</label>
+        <input type="text" class="form-control" id="keyId" name="key" />
+    </div>
+
+    @firstFactory.showHtmlHelperB(Html)
+    <button id="SubmitBtnId" type="submit" class="btn btn-outline-dark">Enter</button>
+</form>
+<span id="answerId">@Model.encryptedWord</span>
+
+<h3>Прогеры</h3>
+    @firstFactory.showHtmlHelperA(Html)
+<br/>
+<h3>Кнопки</h3>
+    @secondFactory.showHtmlHelperA(Html)
+<br />
+<h3>Изображения</h3>
+    @secondFactory.showHtmlHelperB(Html)
 

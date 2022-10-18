@@ -9,17 +9,19 @@ namespace ForAizhulov.Patterns
         void AddComponentCipher(IComponent component);
         void AddCipher(ICipher cipher);
         void RemoveComponentCipher(IComponent component);
+        public bool IsDone();
         IComponent GetElement();
         IComponent GetNextElement();
         IIterator CreateIterator();
-        string EncryptWord(string word);
-        string DecryptWord(string word);
+        string EncryptWord(string word, string key);
+        string DecryptWord(string word, string key);
     }
 
     internal class CipherRoot: IComponent
     {
         private List<IComponent> components = new List<IComponent>();
         private ICipher _cipher;
+        private int count = 0;
 
         public IIterator CreateIterator()
         {
@@ -28,12 +30,20 @@ namespace ForAizhulov.Patterns
 
         public IComponent GetElement()
         {
-            return this;
+            return components[count];
         }
 
         public IComponent GetNextElement()
         {
-            return components[0];
+            count++;
+            return GetElement();
+
+        }
+
+        public bool IsDone()
+        {
+            if (count == components.Count - 1) return true;
+            return false;
         }
         
         public void AddComponentCipher(IComponent component)
@@ -51,12 +61,12 @@ namespace ForAizhulov.Patterns
             components.Remove(component);
         }
 
-        public string EncryptWord(string word)
+        public string EncryptWord(string word, string key)
         {
-            return this._cipher.Encrypt(word);
+            return this._cipher.Encrypt(word, "");
         }
 
-        public string DecryptWord(string word)
+        public string DecryptWord(string word, string key)
         {
             return this._cipher.Decrypt(word);
         }
@@ -80,14 +90,14 @@ namespace ForAizhulov.Patterns
             return new Iterator(this);
         }
 
-        public string DecryptWord(string word)
+        public string DecryptWord(string word, string key)
         {
-            return this._cipher.Decrypt(word);
+            return this._cipher.Decrypt(word, key);
         }
 
-        public string EncryptWord(string word)
+        public string EncryptWord(string word, string key)
         {
-            return this._cipher.Encrypt(word);
+            return this._cipher.Encrypt(word, key);
         }
 
         public IComponent GetElement()
@@ -96,6 +106,11 @@ namespace ForAizhulov.Patterns
         }
 
         public IComponent GetNextElement()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsDone()
         {
             throw new NotImplementedException();
         }
